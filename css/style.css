@@ -1,0 +1,219 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=UnifrakturCook:wght@700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Cinzel', serif;
+    background:#07142b;
+    color:white;
+    overflow-x:hidden;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(2,8,23,0.85);
+    backdrop-filter:blur(10px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 40px;
+    z-index:1000;
+}
+
+.logo{
+    font-family:'UnifrakturCook', cursive;
+    font-size:2rem;
+    color:#ff7b00;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:#ff7b00;
+}
+
+#loader{
+    position:fixed;
+    inset:0;
+    background:linear-gradient(135deg,#020817,#07142b,#0b1d3a);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    animation:fadeOut 1.5s ease forwards;
+    animation-delay:3s;
+}
+
+.loader-logo{
+    font-size:6rem;
+    color:white;
+    font-family:'UnifrakturCook', cursive;
+    letter-spacing:8px;
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.6),
+        0 0 20px rgba(255,100,0,0.6),
+        0 0 40px rgba(255,0,0,0.5);
+    animation:pulse 1.5s infinite;
+}
+
+.loader-sub{
+    margin-top:15px;
+    color:#ff7b00;
+    letter-spacing:4px;
+    text-align:center;
+}
+
+@keyframes pulse{
+    0%{ transform:scale(1); }
+    50%{ transform:scale(1.08); }
+    100%{ transform:scale(1); }
+}
+
+@keyframes fadeOut{
+    to{
+        opacity:0;
+        visibility:hidden;
+    }
+}
+
+.hero{
+    min-height:100vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.7)),
+        url('https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1600&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:5rem;
+    font-family:'UnifrakturCook', cursive;
+    margin-bottom:20px;
+    text-shadow:
+        0 0 15px rgba(255,120,0,0.6),
+        0 0 30px rgba(255,0,0,0.5);
+}
+
+.hero p{
+    max-width:800px;
+    font-size:1.2rem;
+    line-height:1.8;
+}
+
+.hero-btn{
+    margin-top:35px;
+    padding:15px 40px;
+    background:linear-gradient(90deg,#ff3c00,#ff7b00);
+    color:white;
+    border:none;
+    border-radius:40px;
+    font-size:1rem;
+    cursor:pointer;
+    transition:0.3s;
+    font-weight:bold;
+}
+
+.hero-btn:hover{
+    transform:translateY(-5px) scale(1.05);
+    box-shadow:0 0 20px rgba(255,90,0,0.6);
+}
+
+.section{
+    padding:120px 10%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:3rem;
+    margin-bottom:60px;
+    color:#ff7b00;
+    font-family:'UnifrakturCook', cursive;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:linear-gradient(145deg,#0c1f3d,#081325);
+    padding:35px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.card h3{
+    color:#ff3c00;
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#d0d0d0;
+    line-height:1.7;
+}
+
+footer{
+    background:#020817;
+    text-align:center;
+    padding:30px;
+    color:#888;
+}
+
+.page-header{
+    padding-top:160px;
+    text-align:center;
+}
+
+.page-header h1{
+    font-size:4rem;
+    font-family:'UnifrakturCook', cursive;
+    color:#ff7b00;
+}
+
+.page-content{
+    max-width:900px;
+    margin:50px auto;
+    line-height:1.8;
+    padding:20px;
+}
+
+@media(max-width:768px){
+    .hero h1{
+        font-size:3rem;
+    }
+
+    nav{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+}
